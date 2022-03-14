@@ -5,7 +5,9 @@
 <div class="wrapper">
   <div class="show_posts">
     <% @posts.each do |post| %>
-      <%= post.content %>
+      <div class="post_container">
+        <p><%= post.content %></p>
+      </div>
     <% end %>
   </div>
 </div>
