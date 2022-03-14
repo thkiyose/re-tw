@@ -1,1 +1,11 @@
-ああああ
+<header>
+  <p class="header_logo">Re-TW</p>
+  <p id="header_new_button"><%= link_to "新規投稿", new_post_path %></p>
+</header>
+<div class="wrapper">
+  <div class="show_posts">
+    <% @posts.each do |post| %>
+      <%= post.content %>
+    <% end %>
+  </div>
+</div>
