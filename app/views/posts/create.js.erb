@@ -1,0 +1,7 @@
+var modal = document.getElementById('modal');
+var mask = document.getElementById('mask');
+var show_posts = document.getElementById('show_posts');
+
+modal.classList.add('hidden');
+mask.classList.add('hidden');
+show_posts.innerHTML = "<%= escape_javascript(render partial:'posts', locals:{ posts: @posts }) %>";

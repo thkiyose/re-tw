@@ -1,18 +1,34 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @posts = Post.all.order(created_at: :desc)
   end
 
   def new
     @post = Post.new
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def create
     @post = Post.new(post_params)
-    if @post.save
-      redirect_to posts_path
-    else
-      render :new, status: :unprocessable_entity
+    respond_to do |format|
+      if @post.save
+        @posts = Post.all.order(created_at: :desc)
+        format.js
+      else
+        format.js {render "new.js.erb"}
+      end
+    end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    @posts = Post.all.order(created_at: :desc)
+    respond_to do |format|
+      format.js
     end
   end
 

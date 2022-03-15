@@ -1,13 +1,13 @@
 <header>
   <p class="header_logo">Re-TW</p>
-  <p id="header_new_button"><%= link_to "新規投稿", new_post_path %></p>
+  <p id="header_new_button"><%= button_to "新規投稿", new_post_path, method: :get, remote: true %></p>
 </header>
 <div class="wrapper">
-  <div class="show_posts">
-    <% @posts.each do |post| %>
-      <div class="post_container">
-        <p><%= post.content %></p>
-      </div>
-    <% end %>
+  <div id="mask" class="hidden"></div>
+  <div id="modal" class="hidden">
+    <p>モーダルウィンドウ<p>
+  </div>
+  <div id="show_posts">
+    <%= render "posts", posts: @posts %>
   </div>
 </div>
