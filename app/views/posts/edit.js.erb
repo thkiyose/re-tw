@@ -1,0 +1,2 @@
+var target = document.getElementById("post<%= @post.id %>");
+target.innerHTML = "<%= escape_javascript(render partial:'form') %>";
