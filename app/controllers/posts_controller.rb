@@ -23,6 +23,18 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def update
+    @post = Post.find(params[:id])
+    respond_to do |format|
+      if @post.update(post_params)
+        @posts = Post.all.order(created_at: :desc)
+        format.js
+      else
+        format.js {render "edit"}
+      end
+    end
+  end
+
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
