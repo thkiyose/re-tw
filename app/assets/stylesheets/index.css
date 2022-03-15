@@ -1,5 +1,17 @@
+.wrapper {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.post_wrapper {
+  background-color: white;
+  margin: 20px;
+  padding: 30px;
+  border-radius: 10px;
+}
+
 #mask {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.3);
   position: fixed;
   top: 0;
   bottom: 0;
@@ -10,6 +22,8 @@
 
 #modal {
   background-color: white;
+  padding: 20px;
+  border-radius: 10px;
   position: fixed;
   top: 10vh;
   left: 0;

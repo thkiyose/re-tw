@@ -18,7 +18,7 @@ class PostsController < ApplicationController
         @posts = Post.all.order(created_at: :desc)
         format.js
       else
-        format.js {render "new.js.erb"}
+        format.js {render "new"}
       end
     end
   end
