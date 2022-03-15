@@ -1,6 +1,6 @@
 <% posts.each do |post| %>
     <div class="post_wrapper">
       <p><%= post.content %></p>
-      <p><%= link_to "削除", post_path(post.id), method: :delete, remote: true %></p>
+      <p><%= button_to "削除", post_path(post.id), method: :delete, remote: true %><%= button_to "編集", edit_post_path(post.id), method: :get, remote: true %></p>
     </div>
 <% end %>
